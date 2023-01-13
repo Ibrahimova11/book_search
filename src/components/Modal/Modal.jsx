@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import {GrClose} from 'react-icons/gr'
+import React from 'react'
+import {AiOutlineCloseCircle} from 'react-icons/ai'
 import styled from 'styled-components';
 
 const ModalContainer = styled.div`
@@ -59,6 +59,10 @@ const ModalCloseIcon = styled.span`
  
 
 `;
+const style={
+  color:'red',
+  backgroundColor:'white'
+}
 
 function Modal({view, book, close}) {
     if (!view) {
@@ -72,7 +76,7 @@ function Modal({view, book, close}) {
           <ModalTitle1>{book.volumeInfo.title}</ModalTitle1>
           <ModalTitle2>{book.volumeInfo.publisher}</ModalTitle2>
           <ModalText>{book.volumeInfo.description}</ModalText>
-          <ModalCloseIcon onClick={close}><GrClose/></ModalCloseIcon>
+          <ModalCloseIcon style={{color:'red'}} onClick={close}><AiOutlineCloseCircle style={style}/></ModalCloseIcon>
         </Modal_Text_Container>
       </ModalContainer>
   
