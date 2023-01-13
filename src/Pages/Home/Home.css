@@ -1,0 +1,22 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.Show{
+    width: 70px;
+    display: flex;
+    text-align: center;
+  margin-right: 90px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.Showw{
+display: flex;
+text-align: center;
+justify-content: center;
+font-size: 25px;
+margin-top: 80px;
+
+}
+
+
