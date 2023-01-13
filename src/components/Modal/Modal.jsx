@@ -13,6 +13,14 @@ const ModalContainer = styled.div`
   padding: 50px 25px ;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 `;
+const Modal_Text_Container = styled.div`
+  width: 70%;
+  float: left;
+  padding: 6px, 18px;
+  margin: 10px, 0px;
+  box-sizing: border-box;
+`;
+
 const Img = styled.img`
   width: 20%;
   height: 200px;
@@ -21,16 +29,9 @@ const Img = styled.img`
   margin-left: auto;
   object-fit: contain;
 `;
-const Modal_Text_Container = styled.div`
-  width: 70%;
-  float: left;
-  padding: 6px, 18px;
-  margin: 10px, 0px;
-  box-sizing: border-box;
-`;
 const ModalTitle1 = styled.h4`
-  padding: 12px, 18px;
   text-align: center;
+  padding: 12px, 18px;
 `;
 const ModalTitle2 = styled.h5`
   margin: 2px;
@@ -74,6 +75,7 @@ function Modal({view, book, close}) {
           <ModalCloseIcon onClick={close}><GrClose/></ModalCloseIcon>
         </Modal_Text_Container>
       </ModalContainer>
+  
   )
 }
 

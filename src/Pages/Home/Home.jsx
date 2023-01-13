@@ -15,12 +15,7 @@ const Wrapper = styled.div`
   background-position: center center;
   background-size: cover;
 `;
-const ContentWrapper = styled.div`
-  display: block;
-  position: relative;
-  box-sizing: border-box;
-  width: 55%;
-`;
+
 const Title = styled.h1`
 
   display: block;
@@ -32,6 +27,13 @@ const Title = styled.h1`
 const Search = styled.div`
   width: 100%;
   position: relative;
+`;
+
+const ContentWrapper = styled.div`
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+  width: 55%;
 `;
 const Input = styled.input`
   width: 100%;
@@ -89,9 +91,9 @@ const Author = styled.h6`
 
 function Home() {
   let [view, setView] = useState(false);
-  let [books, setBooks] = useState([]);
   let [search, setSearch] = useState("");
   const [bookDetail, setBookDetail] = useState()
+  let [books, setBooks] = useState([]);
 
   const open = () => {
     setView(!view);
@@ -99,13 +101,7 @@ function Home() {
   const close =()=>{
     setView(false)
   }
-  useEffect(() => {
-    axios
-      .get(`https://www.googleapis.com/books/v1/volumes?q=${search}`)
-      .then((res) => {
-        setBooks(res.data.items);
-      });
-  }, []);
+  
 
   const searchBook=()=>{
     axios.get(`https://www.googleapis.com/books/v1/volumes?q=${search}&maxResults=30`).then((res)=>setBooks(res.data.items))
@@ -130,10 +126,12 @@ function Home() {
           </Search>
         </ContentWrapper>
       </Wrapper>
-
+      {
+        books.length === 0 &&  <div className="Showw"><h1 className="Show"><b>Nothing To Show !?</b></h1></div>
+      }
 
 {
-    <div style={{display:'flex', flexWrap:'wrap', marginLeft:"auto", marginRight:'auto'}}>
+    <div style={{display:'flex',  marginLeft:"auto", marginRight:'auto',flexWrap:'wrap',}}>
 {books.map((book, index) => {
         return (
           <>
