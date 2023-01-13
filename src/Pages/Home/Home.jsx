@@ -44,6 +44,13 @@ const Input = styled.input`
   font-size: 16px;
   box-shadow: rgb(255 255 255 / 85%) 0px 6px 12px -2px,
     rgb(255 255 255 / 90%) 0px 3px 7px -3px; ;
+    &:hover{
+      box-shadow: rgb(60 64 67 / 30%) 0px 1px 2px 0px, rgb(60 64 67 / 15%) 0px 2px 6px 2px;
+    }
+    &:focus{
+      box-shadow: rgb(0 0 0 / 49%) 0px 10px 20px, rgb(0 0 0 / 53%) 0px 6px 6px;
+    outline: none;
+    }
 `;
 
 const InputIcon = styled.span`
@@ -74,6 +81,7 @@ const Img = styled.img`
   padding-bottom: 13px;
  
 `;
+
 const Name = styled.h5`
   margin-top: 12px;
   font-size: 19px;
